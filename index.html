@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>White House | Dine · Swim · Dance</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">WHITE HOUSE</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">WHITE HOUSE</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Experiences</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#services" onclick="closeMobileMenu()">Experiences</a></li>
+      <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
+      <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-particles" id="particles"></div>
+    <div class="hero-3d-scene">
+      <div class="floating-card card-1">🍷</div>
+      <div class="floating-card card-2">🏊</div>
+      <div class="floating-card card-3">🎶</div>
+      <div class="floating-card card-4">🕯️</div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline reveal-up">KHAIRAHANI's FINEST</p>
+      <h1 class="hero-title reveal-up delay-1">
+        <span class="title-line">WHITE</span>
+        <span class="title-line red">HOUSE</span>
+      </h1>
+      <p class="hero-sub reveal-up delay-2">Where Every Night Becomes a Memory</p>
+      <div class="hero-buttons reveal-up delay-3">
+        <a href="#services" class="btn-primary">Explore Now</a>
+        <a href="#contact" class="btn-outline">Book a Table</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="strip-inner">
+      <span>Luxury Dining</span>
+      <span class="dot">✦</span>
+      <span>Swimming Pool</span>
+      <span class="dot">✦</span>
+      <span>Dance Floor</span>
+      <span class="dot">✦</span>
+      <span>Banquet Hall</span>
+      <span class="dot">✦</span>
+      <span>Nanglo Special</span>
+      <span class="dot">✦</span>
+      <span>Khairahani</span>
+      <span class="dot">✦</span>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <p class="section-sub reveal-fade">Our Experiences</p>
+      <h2 class="section-title reveal-up">Choose Your<br/><span class="red">Adventure</span></h2>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- DINING CARD -->
+      <div class="service-card reveal-card" data-service="dining">
+        <div class="card-3d-wrapper">
+          <div class="card-face card-front">
+            <div class="card-icon-3d">
+              <div class="icon-cube">
+                <span class="icon-main">🍽️</span>
+              </div>
+            </div>
+            <h3>Luxury Dining</h3>
+            <p>Indulge in gourmet flavors, Nanglo sets & curated menus in an exquisite ambiance.</p>
+            <button class="card-btn" onclick="showContact('dining')">Contact Us</button>
+          </div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- SWIMMING CARD -->
+      <div class="service-card reveal-card" data-service="swimming">
+        <div class="card-3d-wrapper">
+          <div class="card-face card-front">
+            <div class="card-icon-3d">
+              <div class="icon-cube">
+                <span class="icon-main">🏊</span>
+              </div>
+            </div>
+            <h3>Swimming Pool</h3>
+            <p>Dive into our stunning poolside experience — perfect to chill with friends & family.</p>
+            <button class="card-btn" onclick="showContact('swimming')">Contact Us</button>
+          </div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- DANCE CARD -->
+      <div class="service-card reveal-card" data-service="dance">
+        <div class="card-3d-wrapper">
+          <div class="card-face card-front">
+            <div class="card-icon-3d">
+              <div class="icon-cube">
+                <span class="icon-main">🎶</span>
+              </div>
+            </div>
+            <h3>Dance & Events</h3>
+            <p>Electrifying dance floor, live music & banquet hall for private parties & events.</p>
+            <button class="card-btn" onclick="showContact('dance')">Contact Us</button>
+          </div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div class="contact-modal" id="contactModal">
+    <div class="modal-overlay" onclick="closeContact()"></div>
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeContact()">✕</button>
+      <div class="modal-icon" id="modalIcon">📞</div>
+      <h3 id="modalTitle">Contact Us</h3>
+      <p id="modalDesc">Talk to us and plan your perfect experience!</p>
+      <a href="tel:9855087040" class="modal-phone">985-5087040</a>
+      <div class="modal-location">
+        <span>📍</span>
+        <span>Khairahani, Chitwan, Nepal</span>
+      </div>
+      <a href="tel:9855087040" class="modal-call-btn">Call Now</a>
+    </div>
+  </div>
+
+  <!-- STATS SECTION -->
+  <section class="stats-section">
+    <div class="stats-bg"></div>
+    <div class="stats-grid">
+      <div class="stat-item reveal-fade">
+        <span class="stat-num" data-target="500">0</span><span class="stat-unit">+</span>
+        <p>Happy Guests</p>
+      </div>
+      <div class="stat-item reveal-fade">
+        <span class="stat-num" data-target="3">0</span><span class="stat-unit"></span>
+        <p>Unique Experiences</p>
+      </div>
+      <div class="stat-item reveal-fade">
+        <span class="stat-num" data-target="1">0</span><span class="stat-unit"></span>
+        <p>Iconic Venue</p>
+      </div>
+      <div class="stat-item reveal-fade">
+        <span class="stat-num" data-target="100">0</span><span class="stat-unit">%</span>
+        <p>Satisfaction Rate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW SECTION -->
+  <section class="reviews" id="reviews">
+    <div class="section-header">
+      <p class="section-sub reveal-fade">What People Say</p>
+      <h2 class="section-title reveal-up">Guest <span class="red">Reviews</span></h2>
+    </div>
+    <div class="review-cards">
+      <div class="review-card reveal-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best place to chill with friends at swimming pool and food is very tasty and good service. Highly recommended this restaurant for Nanglo set 😊"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">G</div>
+          <div>
+            <p class="reviewer-name">Guest Review</p>
+            <p class="reviewer-tag">Verified Visitor · Khairahani</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The ambiance is absolutely stunning. Swimming pool at night with the lights on is a magical experience. Will come back again!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">R</div>
+          <div>
+            <p class="reviewer-name">Regular Customer</p>
+            <p class="reviewer-tag">Verified Visitor · Chitwan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Celebrated my birthday here — the banquet hall was gorgeous, music was great, and the Nanglo set was incredible. Perfect party venue!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">P</div>
+          <div>
+            <p class="reviewer-name">Party Organizer</p>
+            <p class="reviewer-tag">Verified Visitor · Narayanghat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <section class="gallery-strip">
+    <div class="gallery-track">
+      <div class="gallery-item">🍷 Fine Dining</div>
+      <div class="gallery-item">🏊 Pool Side</div>
+      <div class="gallery-item">💃 Dance Floor</div>
+      <div class="gallery-item">🎂 Events</div>
+      <div class="gallery-item">🍜 Nanglo Set</div>
+      <div class="gallery-item">🎵 Live Music</div>
+      <div class="gallery-item">🌙 Night Vibes</div>
+      <div class="gallery-item">🍷 Fine Dining</div>
+      <div class="gallery-item">🏊 Pool Side</div>
+      <div class="gallery-item">💃 Dance Floor</div>
+      <div class="gallery-item">🎂 Events</div>
+      <div class="gallery-item">🍜 Nanglo Set</div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info reveal-up">
+        <p class="section-sub">Get In Touch</p>
+        <h2>Reserve Your<br/><span class="red">Experience</span></h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="c-icon">📞</span>
+            <div>
+              <p class="c-label">Phone</p>
+              <a href="tel:9855087040" class="c-value">985-5087040</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon">📍</span>
+            <div>
+              <p class="c-label">Location</p>
+              <p class="c-value">Khairahani, Chitwan, Nepal</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="c-icon">🕐</span>
+            <div>
+              <p class="c-label">Open Hours</p>
+              <p class="c-value">10:00 AM – 11:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <a href="tel:9855087040" class="btn-primary">Call Now</a>
+      </div>
+
+      <div class="contact-visual reveal-fade">
+        <div class="venue-card-3d">
+          <div class="venue-glow"></div>
+          <div class="venue-content">
+            <h3>WHITE HOUSE</h3>
+            <p>Your All-in-One Party Destination</p>
+            <div class="venue-features">
+              <span>🍽️ Dining</span>
+              <span>🏊 Swimming</span>
+              <span>🎶 Dance</span>
+              <span>🏛️ Hall</span>
+            </div>
+            <p class="venue-location">📍 Khairahani, Chitwan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">WHITE HOUSE</div>
+      <p class="footer-tagline">Dine · Swim · Dance · Celebrate</p>
+      <p class="footer-location">📍 Khairahani, Chitwan, Nepal &nbsp;|&nbsp; 📞 985-5087040</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2025 White House. All Rights Reserved. Crafted with ❤️ in Khairahani.</p>
+    </div>
+    <div class="footer-bg-text">WHITE HOUSE</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+  </html>
